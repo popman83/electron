@@ -16,6 +16,8 @@
 const NSAutoresizingMaskOptions kDefaultAutoResizingMask =
     NSViewMaxXMargin | NSViewMinYMargin;
 
+const IN_DEBUG_MODE = getenv("ELECTRON_DEBUG_DRAG_REGIONS");
+
 @interface DragRegionView : NSView
 
 @property(assign) NSPoint initialLocation;
@@ -135,7 +137,7 @@ const NSAutoresizingMaskOptions kDefaultAutoResizingMask =
 
 // For debugging purposes only.
 - (void)drawRect:(NSRect)aRect {
-  if (getenv("ELECTRON_DEBUG_DRAG_REGIONS")) {
+  if (IN_DEBUG_MODE) {
     [[[NSColor greenColor] colorWithAlphaComponent:0.5] set];
     NSRectFill([self bounds]);
   }
@@ -154,7 +156,7 @@ const NSAutoresizingMaskOptions kDefaultAutoResizingMask =
 
 // For debugging purposes only.
 - (void)drawRect:(NSRect)aRect {
-  if (getenv("ELECTRON_DEBUG_DRAG_REGIONS")) {
+  if (IN_DEBUG_MODE) {
     [[[NSColor redColor] colorWithAlphaComponent:0.5] set];
     NSRectFill([self bounds]);
   }

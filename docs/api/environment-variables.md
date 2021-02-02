@@ -122,8 +122,7 @@ Prints Chrome's internal logging to the console.
 
 ### `ELECTRON_DEBUG_DRAG_REGIONS`
 
-Adds coloration to draggable regions on [`BrowserView`](./browser-view.md)s on macOS - draggable regions will be colored
-green and non-draggable regions will be colored red to aid debugging.
+Adds coloration to draggable regions on [`BrowserView`](./browser-view.md)s on macOS - draggable regions will be colored green and non-draggable regions will be colored red to aid debugging.
 
 ### `ELECTRON_DEBUG_NOTIFICATIONS`
 
