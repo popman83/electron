@@ -42,6 +42,8 @@ struct WebPluginInfo;
 
 namespace electron {
 
+class ElectronApiServiceImpl;
+
 #if BUILDFLAG(ENABLE_ELECTRON_EXTENSIONS)
 class ElectronExtensionsRendererClient;
 #endif
@@ -129,6 +131,8 @@ class RendererClientBase : public content::ContentRendererClient
   std::unique_ptr<extensions::ExtensionsClient> extensions_client_;
   std::unique_ptr<ElectronExtensionsRendererClient> extensions_renderer_client_;
 #endif
+
+  std::unique_ptr<ElectronApiServiceImpl> service_impl_;
 
 #if defined(WIDEVINE_CDM_AVAILABLE)
   ChromeKeySystemsProvider key_systems_provider_;
